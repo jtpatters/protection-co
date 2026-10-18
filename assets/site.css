@@ -99,7 +99,7 @@ nav { display: flex; gap: 8px; }
   border-radius: 3px;
   background: var(--line);
 }
-.page .sheet, .support .sheet, .privacy .sheet { margin-top: 24px; }
+.page .sheet, .support .sheet, .privacy .sheet, .age .sheet { margin-top: 24px; }
 
 .lead { font-size: 20px; line-height: 1.5; margin: 6px 0 18px; }
 .kicker {
@@ -199,7 +199,7 @@ nav { display: flex; gap: 8px; }
 
 /* Questions and answers. */
 .faq .card h3 { font-size: 18px; }
-.faq kbd {
+.faq kbd, .age kbd {
   padding: 1px 8px;
   border-radius: 999px;
   border: 1px solid var(--line);
