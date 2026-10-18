@@ -4,8 +4,7 @@ title: Support
 permalink: /support/
 ---
 
-Need help with Protection Co, found a bug, or have an idea? Email
-**[REPLACE-WITH-SUPPORT-EMAIL](mailto:REPLACE-WITH-SUPPORT-EMAIL)** with what happened, your iPhone
+Need help with Protection Co, found a bug, or have an idea? Email jtpatters@gmail.com with what happened, your iPhone
 model and iOS version. A screenshot helps. We read every message.
 
 ## Common questions
@@ -39,7 +38,7 @@ there.
 Tap **Sound** at the top right of the map.
 
 **Does it work on iPad?**
-Protection Co is made for iPhone. It runs on an iPad in an iPhone-sized window.
+Protection Co is made for iPhone only.
 
 **What do I need to run it?**
 An iPhone with iOS 15 or later.
