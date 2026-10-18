@@ -50,5 +50,4 @@ version is released.
 
 ## Contact
 
-Questions about this policy? Email
-**[REPLACE-WITH-SUPPORT-EMAIL](mailto:REPLACE-WITH-SUPPORT-EMAIL)**.
+Questions about this policy? Email jtpatters@gmail.com
