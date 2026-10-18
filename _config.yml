@@ -1,0 +1,7 @@
+title: Protection Co
+description: An insurance company, built a quarter at a time.
+theme: minima
+# Only the pages are shown in the header, in this order.
+header_pages:
+  - support.md
+  - privacy.md
