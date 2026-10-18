@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{% if page.title and page.title != site.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <meta name="theme-color" content="#a9d8ee">
+  <meta property="og:title" content="{{ page.title | default: site.title }}">
+  <meta property="og:description" content="{{ page.description | default: site.description }}">
+  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/hero.jpg">
+  <link rel="icon" href="{{ site.baseurl }}/assets/icon.png">
+  <link rel="apple-touch-icon" href="{{ site.baseurl }}/assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@700&family=Russo+One&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/site.css">
+</head>
+<body class="{{ page.kind | default: 'page' }}">
+  <header class="bar">
+    <a class="brand" href="{{ site.baseurl }}/" aria-label="Protection Co home">
+      <img src="{{ site.baseurl }}/assets/icon.png" alt="" width="40" height="40">
+      <svg class="wordmark" viewBox="0 0 200 34" role="img" aria-label="Protection Co">
+        <g transform="translate(4 26)">
+          <text class="shade" y="4">Protection Co</text>
+          <text class="edge" y="2.5">Protection Co</text>
+          <text class="back">Protection Co</text>
+          <text class="front">Protection Co</text>
+        </g>
+      </svg>
+    </a>
+    <nav aria-label="Pages">
+      <a class="pill{% if page.kind == 'support' %} on{% endif %}" href="{{ site.baseurl }}/support/">Support</a>
+      <a class="pill{% if page.kind == 'privacy' %} on{% endif %}" href="{{ site.baseurl }}/privacy/">Privacy</a>
+    </nav>
+  </header>
+
+  {{ content }}
+
+  <footer class="foot">
+    <p class="promise">No ads · No in-app purchases · No account · Plays offline</p>
+    <p>
+      <a href="{{ site.baseurl }}/">Home</a> ·
+      <a href="{{ site.baseurl }}/support/">Support</a> ·
+      <a href="{{ site.baseurl }}/privacy/">Privacy policy</a>
+    </p>
+    <p class="small">© 2026 Jason Patterson. Protection Co is a game; every company, town and dollar in it is made up.</p>
+  </footer>
+</body>
+</html>

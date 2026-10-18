@@ -1,7 +1,7 @@
 title: Protection Co
-description: An insurance company, built a quarter at a time.
-theme: minima
-# Only the pages are shown in the header, in this order.
-header_pages:
-  - support.md
-  - privacy.md
+description: An insurance company, built a quarter at a time. A turn-based business game for iPhone.
+url: https://jtpatters.github.io
+baseurl: /protection-co
+# The site has its own look, the game's, so no theme.
+exclude:
+  - README.md

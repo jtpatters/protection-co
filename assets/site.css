@@ -1,0 +1,292 @@
+/* Protection Co's site, in the game's own look: its sky, paper and cards, its navy and gold, the
+   title's lettering and the Millbrook Ledger's type. The colors are the game's (app/src/index.css). */
+:root {
+  --sky-top: #a9d8ee;
+  --sky-low: #e9f4e4;
+  --paper: #f7f2e8;
+  --card: #fffdf8;
+  --ink: #1c2a38;
+  --soft: #5d6b78;
+  --line: #e4dccb;
+  --good: #1f7a4d;
+  --bad: #b3402e;
+  --accent: #e0a526;
+  --gold-ink: #8a5f06;
+  --navy: #1c3a5c;
+  --wide: 760px;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.55 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
+}
+img { max-width: 100%; height: auto; }
+a { color: var(--navy); text-underline-offset: 3px; }
+a:hover { color: #2a5682; }
+h1, h2, h3 { line-height: 1.2; letter-spacing: -0.01em; }
+
+/* The bar along the top: the icon and the name, in the title's lettering, and the pages as pills. */
+.bar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 16px;
+}
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.brand img { width: 40px; height: 40px; border-radius: 22.37%; box-shadow: 0 2px 6px rgb(28 42 56 / 0.25); }
+/* The name, drawn as the title screen draws it: a navy outline over a gold edge, with a shadow. */
+.wordmark { display: block; height: 30px; width: auto; overflow: visible; }
+.wordmark text { font-family: 'Russo One', 'DIN Alternate', 'Arial Black', sans-serif; font-size: 26px; letter-spacing: 0.02em; }
+.wordmark .shade { fill: rgb(28 42 56 / 0.3); stroke: rgb(28 42 56 / 0.3); stroke-width: 4.5px; stroke-linejoin: round; }
+.wordmark .edge { fill: var(--accent); stroke: var(--accent); stroke-width: 4.5px; stroke-linejoin: round; }
+.wordmark .back { fill: var(--navy); stroke: var(--navy); stroke-width: 4.5px; stroke-linejoin: round; }
+.wordmark .front { fill: var(--card); }
+nav { display: flex; gap: 8px; }
+.pill {
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  box-shadow: 0 1px 2px rgb(28 42 56 / 0.12), 0 4px 12px rgb(28 42 56 / 0.1);
+}
+.pill:hover { color: var(--ink); background: #fff; }
+.pill.on { background: var(--navy); color: var(--card); }
+
+/* The sky behind the top of every page. */
+.sky { background: linear-gradient(180deg, var(--sky-top) 0%, #cfe8f2 55%, var(--paper) 100%); margin-top: -68px; padding-top: 68px; }
+
+/* Home: the town and the title from the game's opening screen, fading into the paper. */
+.hero { position: relative; max-width: 900px; margin: 0 auto; }
+.hero img {
+  display: block;
+  width: 100%;
+  border-radius: 0 0 32px 32px;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 10%, #000 88%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0, #000 10%, #000 88%, transparent 100%);
+}
+
+/* The sheet: the paper panel that slides up over the town in the game, here holding each page. */
+.sheet {
+  position: relative;
+  max-width: var(--wide);
+  margin: -20px auto 0;
+  padding: 28px 20px 8px;
+  background: var(--paper);
+  border-radius: 28px 28px 0 0;
+}
+.sheet::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  width: 44px;
+  height: 5px;
+  margin-left: -22px;
+  border-radius: 3px;
+  background: var(--line);
+}
+.page .sheet, .support .sheet, .privacy .sheet { margin-top: 24px; }
+
+.lead { font-size: 20px; line-height: 1.5; margin: 6px 0 18px; }
+.kicker {
+  margin: 0 0 6px;
+  color: var(--soft);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.section-title { margin: 40px 0 12px; font-size: 26px; font-weight: 800; }
+
+/* A card, as on the desk. */
+.card {
+  margin: 0 0 14px;
+  padding: 18px 20px;
+  background: var(--card);
+  border: 1.5px solid var(--line);
+  border-radius: 18px;
+}
+.card h3 { margin: 0 0 6px; font-size: 19px; font-weight: 700; }
+.card p { margin: 0; color: var(--soft); }
+.card p + p { margin-top: 8px; }
+
+/* The card that needs an answer: gold-edged, as a question on the desk is. */
+.card.asking { background: #fff7e6; border: 2px solid var(--accent); box-shadow: 0 0 0 4px rgb(224 165 38 / 0.18); }
+.card.asking .kicker { color: var(--gold-ink); }
+.card.asking h2 { margin: 0 0 8px; font-size: 24px; font-weight: 800; }
+.card.asking p { color: var(--ink); }
+
+/* The big navy button the game ends a quarter with. */
+.button {
+  display: block;
+  margin: 16px 0 0;
+  padding: 16px 20px;
+  border-radius: 16px;
+  background: var(--navy);
+  color: var(--card);
+  font-size: 19px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}
+.button:hover { background: #24496f; color: var(--card); }
+.button.waiting { background: #c9cfd6; color: var(--ink); cursor: default; }
+.button small { display: block; font-size: 14px; font-weight: 500; opacity: 0.8; }
+
+/* The three stages, as the opening screen lists them. */
+.stage { display: grid; grid-template-columns: 1fr auto; gap: 2px 14px; align-items: baseline; }
+.stage h3 { margin: 0; }
+.stage .pitch { font-size: 13px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--soft); }
+.stage.first { border: 2px solid var(--navy); }
+.stage.first .pitch { color: var(--gold-ink); }
+.stage p { grid-column: 1 / -1; margin-top: 6px; }
+.stage .goal { color: var(--ink); }
+
+/* The screenshots, side by side, sliding sideways on a phone. */
+.shots {
+  display: flex;
+  gap: 14px;
+  margin: 0 -20px;
+  padding: 4px 20px 18px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.shots img {
+  flex: 0 0 auto;
+  width: 220px;
+  border-radius: 22px;
+  scroll-snap-align: center;
+  box-shadow: 0 2px 6px rgb(28 42 56 / 0.15), 0 12px 30px rgb(28 42 56 / 0.18);
+}
+
+/* What there is to do, as the advice in the results lists it: a mark, a bold line, then plain words. */
+.marks { margin: 0; padding: 0; list-style: none; }
+.marks li { position: relative; margin: 0 0 16px; padding-left: 44px; color: var(--soft); }
+.marks li b { display: block; color: var(--ink); font-size: 18px; }
+.marks li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--good);
+  color: #fff;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: center;
+}
+.marks.good li b { color: var(--good); }
+.marks li.chance::before { content: '≈'; background: #5d6b78; }
+.marks.good li.chance b { color: var(--ink); }
+
+/* Questions and answers. */
+.faq .card h3 { font-size: 18px; }
+.faq kbd {
+  padding: 1px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  font: 600 15px -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* The privacy policy, as a front page of the Millbrook Ledger. */
+.paper {
+  padding: 22px 22px 8px;
+  background: #fbf8f1;
+  border: 1.5px solid var(--line);
+  border-radius: 18px;
+  font-family: 'Source Serif 4', 'New York', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+.masthead { text-align: center; margin-bottom: 18px; }
+.masthead .motto, .masthead .strip {
+  margin: 0;
+  padding: 5px 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.masthead .motto { border-top: 4px solid var(--ink); border-bottom: 1px solid var(--ink); }
+.masthead h1 {
+  margin: 0;
+  padding: 8px 0 6px;
+  font-family: 'Libre Bodoni', 'Bodoni 72', Didot, serif;
+  font-size: clamp(30px, 7.5vw, 46px);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+}
+.masthead .strip {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  border-top: 3px double var(--ink);
+  border-bottom: 1px solid var(--ink);
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+.headline {
+  margin: 4px 0 8px;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: clamp(30px, 7vw, 42px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+}
+.deck { margin: 0 0 18px; font-size: 21px; line-height: 1.45; }
+.paper h3 {
+  margin: 22px 0 4px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bad);
+}
+.paper p { margin: 0 0 12px; }
+.paper ul { margin: 0 0 12px; padding-left: 22px; }
+.paper li { margin: 0 0 4px; }
+.paper .dateline { font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-size: 14px; color: var(--soft); }
+
+.foot { max-width: var(--wide); margin: 40px auto 0; padding: 24px 20px 48px; border-top: 1.5px solid var(--line); color: var(--soft); text-align: center; font-size: 15px; }
+.foot p { margin: 0 0 8px; }
+.foot .promise { color: var(--ink); font-weight: 700; letter-spacing: 0.02em; }
+.foot .small { font-size: 13px; }
+
+@media (max-width: 520px) {
+  body { font-size: 16px; }
+  .wordmark { height: 24px; }
+  .brand img { width: 34px; height: 34px; }
+  .pill { padding: 7px 12px; font-size: 14px; }
+  .lead { font-size: 18px; }
+  .sheet { margin-top: -12px; padding: 26px 16px 8px; }
+  .shots { margin: 0 -16px; padding-left: 16px; padding-right: 16px; }
+  .shots img { width: 200px; }
+  .paper { padding: 18px 16px 6px; font-size: 17px; }
+  .masthead .strip { font-size: 9.5px; letter-spacing: 0.05em; }
+}
